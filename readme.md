@@ -24,6 +24,18 @@ Ho causó ningún conflicto, ya que simplemente hemos movido main dentro de rama
 
 He usado git log, con su versión: **git log --graph --branches --oneline**. Lo tengo definido con un alias (*git gr*).
 
+El grafo queda: 
+
+```
+* 9895b66 (HEAD -> main, tag: title) E. Añado título al texto.
+*   8580424 D. Mergeadas ramas styled y htmlify. Nos quedamos con los cambios de styled.
+|\
+| * a7bf404 (tag: htmlify) C. Añadido, al texto original, formato html
+* | 769fe7a (tag: styled) B. Modificado archivo con estilo.
+|/
+* 10ff78f (tag: inicial) A. Commit inicial. Añado el fichero GitNuestro.md
+```
+
 ### **El merge del paso 26, ¿podría ser un fast forward? ¿por qué?**
 
 Si podria ser, ya que como están ambos en la misma rama, no hay opciones de conflicto.
@@ -51,3 +63,18 @@ Para regresar al commit inicial, con **git reflog** busco el hash del primer com
 ### **¿Qué comando o comandos utilizaste en el paso 33?**
 
 Para volver al estado final, con **git reflog** busco el commit del último merge (f45eb94) y me desplazo a el con un **git reset --hard f45eb94**
+
+El grafo final queda (antes de añadir el readme.md):
+
+```
+*   f45eb94 (HEAD -> main) F. Merge de main absorvendo a title.
+|\
+| * 9895b66 (tag: title) E. Añado título al texto.
+|/
+*   8580424 D. Mergeadas ramas styled y htmlify. Nos quedamos con los cambios de styled.
+|\
+| * a7bf404 (tag: htmlify) C. Añadido, al texto original, formato html
+* | 769fe7a (tag: styled) B. Modificado archivo con estilo.
+|/
+* 10ff78f (tag: inicial) A. Commit inicial. Añado el fichero GitNuestro.md
+````
